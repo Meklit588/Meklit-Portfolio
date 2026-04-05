@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 222 47% 6%;
+    --foreground: 210 40% 96%;
+
+    --card: 222 47% 9%;
+    --card-foreground: 210 40% 96%;
+
+    --popover: 222 47% 9%;
+    --popover-foreground: 210 40% 96%;
+
+    --primary: 25 75% 58%;
+    --primary-foreground: 222 47% 6%;
+
+    --secondary: 215 25% 15%;
+    --secondary-foreground: 210 40% 90%;
+
+    --muted: 215 25% 15%;
+    --muted-foreground: 215 20% 55%;
+
+    --accent: 25 80% 65%;
+    --accent-foreground: 222 47% 6%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 215 25% 18%;
+    --input: 215 25% 20%;
+    --ring: 25 75% 58%;
+
+    --radius: 0.75rem;
+
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Inter', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+
+    --gradient-primary: linear-gradient(135deg, hsl(25 75% 58%), hsl(35 90% 65%));
+    --gradient-hero: linear-gradient(135deg, hsl(222 47% 8%), hsl(215 40% 12%));
+    --gradient-card: linear-gradient(135deg, hsl(222 47% 9%), hsl(215 25% 12%));
+    --shadow-glow: 0 0 40px -8px hsl(25 75% 58% / 0.2);
+    --shadow-card: 0 8px 32px -4px hsl(0 0% 0% / 0.4);
+  }
+
+  .light {
+    --background: 40 30% 97%;
+    --foreground: 222 47% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 10%;
+
+    --primary: 25 70% 52%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 40 20% 93%;
+    --secondary-foreground: 222 47% 20%;
+
+    --muted: 40 20% 93%;
+    --muted-foreground: 215 20% 45%;
+
+    --accent: 25 70% 52%;
+    --accent-foreground: 0 0% 100%;
+
+    --border: 40 20% 88%;
+    --input: 40 20% 88%;
+    --ring: 25 70% 52%;
+
+    --gradient-card: linear-gradient(135deg, hsl(0 0% 100%), hsl(40 20% 97%));
+    --shadow-glow: 0 0 40px -8px hsl(25 70% 52% / 0.15);
+    --shadow-card: 0 8px 32px -4px hsl(0 0% 0% / 0.08);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-body);
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  h1, h2, h3 {
+    font-family: var(--font-heading);
+  }
+}
+
+@layer components {
+  .gradient-text {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-primary);
+  }
+
+  .glow-border {
+    @apply border border-primary/25;
+    box-shadow: var(--shadow-glow);
+  }
+
+  .section-container {
+    @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28;
+  }
+
+  .section-label {
+    @apply font-mono text-primary text-xs tracking-[0.2em] uppercase mb-3 block;
+  }
+
+  .section-heading {
+    @apply text-3xl md:text-5xl font-bold mb-4 leading-tight;
+    font-family: var(--font-heading);
+  }
+
+  .card-glass {
+    background: var(--gradient-card);
+    @apply rounded-2xl border border-border/50 backdrop-blur-sm;
+    box-shadow: var(--shadow-card);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .card-glass:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-glow), var(--shadow-card);
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-primary-foreground bg-primary hover:bg-primary/90 transition-all duration-200;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold border border-primary/30 text-primary hover:bg-primary/10 hover:border-primary/50 transition-all duration-200;
+  }
+
+  .badge {
+    @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium;
+  }
+
+  .font-mono {
+    font-family: var(--font-mono);
+  }
+
+  .font-heading {
+    font-family: var(--font-heading);
+  }
+
+  .skills-marquee {
+    animation: marquee 35s linear infinite;
+    width: max-content;
+  }
+
+  .skills-marquee:hover {
+    animation-play-state: paused;
+  }
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
