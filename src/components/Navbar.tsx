@@ -42,7 +42,7 @@ const Navbar = () => {
         <a href="#" className="flex items-center gap-3 group" aria-label="Home">
           <div className="w-9 h-9 rounded-full overflow-hidden border-2 border-primary/50 group-hover:border-primary transition-colors shrink-0">
             <img
-              src="/src/IMG_5167.JPG"
+              src="/IMG_5167.JPG"
               alt="Meklit Eshetu"
               className="w-full h-full object-cover"
             />

@@ -80,7 +80,7 @@ const AboutSection = () => {
             <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-primary/30 to-primary/5 blur-2xl scale-110" />
             <div className="relative rounded-3xl overflow-hidden border border-border/40 shadow-2xl w-full max-w-sm">
               <img
-                src="/src/IMG_5167.JPG"
+                src="/IMG_5167.JPG"
                 alt="Meklit Eshetu"
                 className="w-full h-auto object-cover"
               />
