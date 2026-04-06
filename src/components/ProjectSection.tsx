@@ -27,13 +27,9 @@ const ProjectSection = () => {
         transition={{ duration: 0.6 }}
         className="mb-16"
       >
-        <span className="section-label">What I've built</span>
         <h2 className="section-heading">
           Featured <span className="gradient-text">Projects</span>
         </h2>
-        <p className="text-muted-foreground max-w-xl">
-          A selection of projects that showcase my technical range and impact.
-        </p>
       </motion.div>
 
       <div className="space-y-8">
