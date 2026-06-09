@@ -3,22 +3,57 @@ import { Briefcase } from "lucide-react";
 
 const experiences = [
   {
+    role: "Web Developer",
+    company: "Mereb Technologies",
+    location: "Addis Ababa, Ethiopia",
+    duration: "Current",
+    bullets: [
+      "Develop and maintain scalable, high-performance web applications and SaaS products for European and North American clients.",
+      "Build and optimize robust RESTful and gRPC APIs to ensure seamless integration between front-end UIs and back-end services.",
+      "Utilize modern web technologies including JavaScript/TypeScript frameworks and back-end languages to deliver clean, testable code.",
+      "Leverage AWS cloud infrastructure, serverless architectures, and Docker containers to maximize application speed and responsiveness.",
+      "Collaborate with international cross-functional teams in Agile sprints, translating complex requirements into high-utility digital solutions.",
+    ],
+  },
+  {
+    role: "Full-stack Developer Intern",
+    company: "Minab IT Solutions PLC",
+    location: "Ethiopia",
+    duration: "Internship",
+    bullets: [
+      "Contributed to building and maintaining the frontend of Hahu.jobs using React.js and Next.js.",
+      "Assisted in developing backend APIs with Node.js and Express.js while managing data through MongoDB.",
+      "Worked closely with the team to fix bugs, write tests using Jest, and improve platform features.",
+      "Supported the development of scalable features serving thousands of job seekers and employers across Ethiopia.",
+      "Gained hands-on full-stack experience working within a microservice architecture in an agile environment.",
+    ],
+  },
+  {
     role: "Data Analyst & Junior Programmer",
     company: "XOKA IT SOLUTION",
+    location: "",
     duration: "1 year 3 months",
-    description: "Developed data-driven solutions and contributed to full-stack web applications for various clients.",
+    bullets: [
+      "Developed data-driven solutions and contributed to full-stack web applications for various clients.",
+    ],
   },
   {
     role: "ICT System Administrator Intern",
     company: "Ethiopian Customs Commission",
+    location: "",
     duration: "Internship",
-    description: "Managed ICT infrastructure and supported government-level system administration and maintenance.",
+    bullets: [
+      "Managed ICT infrastructure and supported government-level system administration and maintenance.",
+    ],
   },
   {
     role: "ICT Network Administrator Intern",
     company: "Awash Bank",
+    location: "",
     duration: "Internship",
-    description: "Assisted in network administration, monitoring, and troubleshooting across banking infrastructure.",
+    bullets: [
+      "Assisted in network administration, monitoring, and troubleshooting across banking infrastructure.",
+    ],
   },
 ];
 
@@ -62,8 +97,18 @@ const ExperienceSection = () => {
                 <p className="text-primary/80 text-sm font-medium flex items-center gap-2 mb-3">
                   <Briefcase size={14} />
                   {exp.company}
+                  {exp.location && (
+                    <span className="text-muted-foreground font-normal">— {exp.location}</span>
+                  )}
                 </p>
-                <p className="text-muted-foreground text-sm leading-relaxed">{exp.description}</p>
+                <ul className="space-y-1.5">
+                  {exp.bullets.map((point, j) => (
+                    <li key={j} className="text-muted-foreground text-sm leading-relaxed flex gap-2">
+                      <span className="text-primary mt-1 shrink-0">•</span>
+                      <span>{point}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
             </motion.div>
           ))}

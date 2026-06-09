@@ -3,6 +3,33 @@ import { ExternalLink, Github, MapPin, Monitor, Server, Shield } from "lucide-re
 
 const projects = [
   {
+    title: "Apadua GmbH — AI-Powered B2B Fintech & Enterprise Procurement SaaS",
+    description:
+      "Actively engineering a modular, event-driven B2B marketplace and procurement platform for a German AI enterprise client under strict European data security standards. Designing and integrating secure RESTful APIs to manage high-concurrency fintech workflows, complex vendor bidding processes, and automated data pipelines.",
+    tags: ["Python", "Django Ninja", "Next.js", "DDD", "REST APIs", "Agile/Scrum"],
+    icon: Shield,
+    accent: "from-primary/20 to-primary/5",
+    links: { github: "#", live: "#" },
+    highlights: [
+      { icon: Monitor, label: "Frontend", detail: "Next.js, modular UI, Vertical Slice Architecture" },
+      { icon: Server, label: "Backend", detail: "Python (Django Ninja), DDD, event-driven architecture" },
+      { icon: Shield, label: "Security & Scale", detail: "European data compliance, high-concurrency fintech workflows" },
+    ],
+  },
+  {
+    title: "Hahu Jobs — Ethiopia's Leading Online Job Portal",
+    description:
+      "Ethiopia's leading online job portal connecting job seekers with employers across various industries. Users can browse listings, apply for positions, while companies post vacancies and manage recruitment. Contributed to full-stack development using the MERN stack alongside Next.js for server-side rendering and Socket.io for real-time features. Collaborated with the engineering team to build and maintain scalable features within a microservice architecture, working with both MongoDB and MySQL for data management. Participated in testing and debugging using Jest to ensure platform reliability and performance, serving thousands of users across Ethiopia.",
+    tags: ["React.js", "Next.js", "Node.js", "Express.js", "MongoDB", "MySQL", "Socket.io", "Jest"],
+    icon: Monitor,
+    accent: "from-primary/15 to-primary/5",
+    links: { github: "#", live: "https://www.hahu.jobs/" },
+    highlights: [
+      { icon: Monitor, label: "Frontend", detail: "React.js, Next.js (SSR), real-time UI with Socket.io" },
+      { icon: Server, label: "Backend", detail: "Node.js, Express.js, microservice architecture, MongoDB & MySQL" },
+    ],
+  },
+  {
     title: "Addis Ababa Bus Tracking System",
     description:
       "A full-stack real-time public transportation tracking platform for the city of Addis Ababa. Provides live bus location updates, route management, and comprehensive dashboards for city transport authorities.",
